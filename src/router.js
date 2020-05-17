@@ -48,6 +48,14 @@ export default new Router({
                     }
                 }
             ]
-		},
+        },
+        {
+            path: '/desc',
+            name: 'desc',
+            component: () => import("./views/home/desc.vue"),
+            meta: {
+                title: '产品详情'
+            }
+        }
     ]
 })

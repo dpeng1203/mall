@@ -7,7 +7,7 @@
         <van-tabbar 
             route 
             safe-area-inset-bottom
-            active-color="#000"
+            active-color="#20A1AF"
             inactive-color='#7A7A7A'
             >
             <van-tabbar-item

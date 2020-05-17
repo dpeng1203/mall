@@ -11,10 +11,7 @@ module.exports = {
         open: true, //配置自动启动浏览器
         proxy: {
             '/api': {
-                // target: 'http://localhost:9002/',
-                // target: 'http://tttest.2qzs.com',
-                target: 'http://ver.2qzs.com',
-                // target: 'http://192.168.0.112:9002/mg',
+                target: 'http://xry.dodohz.com/',
                 ws: true,
                 changeOrigin: true,
                 pathRewrite: {

@@ -6,31 +6,13 @@
             <van-swipe-item><img src="../../assets/images/swipe_3.jpg" alt=""></van-swipe-item>
         </van-swipe>
         <div class="list">
-            <div class="item">
-                <img src="../../assets/images/swipe_3.jpg" alt="">
-                <p>免洗抗菌洗手液</p>
-                <span>适用于皮肤手部清洁消毒</span>
+            <div class="item" v-for="item in list" :key="item.pCode" @click="toDesc(item.pCode)">
+                <img :src="item.pMainPic" alt="">
+                <p>{{item.pName}}</p>
+                <span>{{item.desc}}</span>
                 <div class="btn">
                     <van-icon name="shopping-cart-o" />
-                    <span>￥ 18</span>
-                </div>
-            </div>
-            <div class="item">
-                <img src="../../assets/images/swipe_3.jpg" alt="">
-                <p>免洗抗菌洗手液</p>
-                <span>适用于皮肤手部清洁消毒</span>
-                <div class="btn">
-                    <van-icon name="shopping-cart-o" />
-                    <span>￥ 18</span>
-                </div>
-            </div>
-            <div class="item">
-                <img src="../../assets/images/swipe_3.jpg" alt="">
-                <p>免洗抗菌洗手液</p>
-                <span>适用于皮肤手部清洁消毒</span>
-                <div class="btn">
-                    <van-icon name="shopping-cart-o"/>
-                    <span>￥ 18</span>
+                    <span>￥ {{item.pPrice2}}</span>
                 </div>
             </div>
         </div>
@@ -39,11 +21,39 @@
 
 <script>
 import { Swipe, SwipeItem, Icon } from 'vant';
+import {homeList} from '../../api/api_home.js'
 export default {
     components: {
         [Swipe.name]: Swipe,
         [SwipeItem.name]: SwipeItem,
         [Icon.name]: Icon
+    },
+    data(){
+        return{
+            list: []
+        }
+    },
+    methods: {
+        getList() {
+            let parms = {
+                pageNum: 1,
+                pageSize: 20
+            }
+            homeList(parms).then(res => {
+                if(res.resultCode === 1) {
+                    this.list = res.data.data
+                    this.list.forEach(ele => {
+                        ele.desc = JSON.parse(ele.pDesc)[0].desc
+                    })
+                }
+            })
+        },
+        toDesc(pCode) {
+            this.$router.push({path: '/desc',query:{pCode}})
+        }
+    },
+    mounted() {
+        this.getList()
     }
 }
 </script>
@@ -74,6 +84,9 @@ export default {
             font-size: 22*@s;
             color: #666;
             margin-top: 15*@s;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         .btn{
             width: 100%;

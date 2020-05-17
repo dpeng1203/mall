@@ -38,25 +38,26 @@
             </div>
             <div class="item">
                 <div class="wrap">
+                    <img src="../../assets/images/mine_4.png" alt="" style="width: 0.43rem">
+                </div>
+                <span class="name">我的足迹</span>
+                <span>></span>
+            </div>
+            <div class="item">
+                <div class="wrap">
                     <img src="../../assets/images/mine_2.png" alt="" style="width: 0.44rem">
                 </div>
                 <span class="name">客服中心</span>
                 <span>></span>
             </div>
-            <div class="item">
+            <!-- <div class="item">
                 <div class="wrap">
                     <img src="../../assets/images/mine_3.png" alt="" style="width: 0.43rem">
                 </div>
                 <span class="name">意见反馈</span>
                 <span>></span>
-            </div>
-            <div class="item">
-                <div class="wrap">
-                    <img src="../../assets/images/mine_4.png" alt="" style="width: 0.43rem">
-                </div>
-                <span class="name">关于我们</span>
-                <span>></span>
-            </div>
+            </div> -->
+            
         </div>   
     </div>
 </template>
