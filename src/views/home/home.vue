@@ -6,7 +6,7 @@
             <van-swipe-item><img src="../../assets/images/swipe_3.jpg" alt=""></van-swipe-item>
         </van-swipe>
         <div class="list">
-            <div class="item" v-for="item in list" :key="item.pCode" @click="toDesc(item.pCode)">
+            <div class="item" v-for="item in list" :key="item.pCode" @click="toDesc(item)">
                 <img :src="item.pMainPic" alt="">
                 <p>{{item.pName}}</p>
                 <span>{{item.desc}}</span>
@@ -48,8 +48,8 @@ export default {
                 }
             })
         },
-        toDesc(pCode) {
-            this.$router.push({path: '/desc',query:{pCode}})
+        toDesc(item) {
+            this.$router.push({path: '/desc',query:{pCode: item.pCode,pName: item.pName,pPrice2: item.pPrice2}})
         }
     },
     mounted() {

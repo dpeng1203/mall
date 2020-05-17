@@ -3,6 +3,11 @@
         <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
             <van-swipe-item v-for="item in swipeImg" :key="item.pOrder"><img :src="item.pPicUrl" alt=""></van-swipe-item>
         </van-swipe>
+        <div class="prod">
+            <p class="name">{{pName}}</p>
+            <p class="price">￥ {{pPrice2}}</p>
+        </div>
+        <div class="tip">商品详情</div>
         <div class="img-wrap">
             <img :src="item.pPicUrl" alt="" v-for="item in descImg" :key="item.pOrder">
         </div>
@@ -21,7 +26,9 @@ export default {
     data(){
         return{
             swipeImg: [],
-            descImg: []
+            descImg: [],
+            pName: '',
+            pPrice2: 0
         }
     },
     methods: {
@@ -42,11 +49,27 @@ export default {
         }
     },
     mounted() {
+        this.pName = this.$route.query.pName
+        this.pPrice2 = this.$route.query.pPrice2
         this.getDesc(this.$route.query.pCode)
     }
 }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+@s: 0.0133rem;
+.desc{
+    .prod{
+        text-align: center;
+        background: #fff;
+        // border-top: 1px solid #CBCBCB;
+        padding: 20*@s 0;
+    }
+    .tip{
+        line-height: 100*@s;
+        font-weight: bold;
+        text-align: center;
+        background: #F3F3F3;
+    }
+}
 </style>
