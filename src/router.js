@@ -7,15 +7,15 @@ Vue.use(Router)
 export default new Router({
     routes: [
         {
-            path: "/",
+            path: "/productList",
             name: "footer",
             component: Footer,
             children: [{
-                    path: '/',
-                    name: 'home',
-                    component: () => import("./views/home/home.vue"),
+                    path: '/productList',
+                    name: 'productList',
+                    component: () => import("./views/product/productList.vue"),
                     meta: {
-                        title: '首页',
+                        title: '产品列表',
                         keepAlive: true
                     }
                 },
@@ -39,9 +39,9 @@ export default new Router({
                     }
                 },
                 {
-                    path: '/mine',
-                    name: 'mine',
-                    component: () => import("./views/mine/mine.vue"),
+                    path: '/mallMine',
+                    name: 'mallMine',
+                    component: () => import("./views/mallMine/mallMine.vue"),
                     meta: {
                         title: '我的',
                         keepAlive: true
@@ -50,9 +50,9 @@ export default new Router({
             ]
         },
         {
-            path: '/desc',
-            name: 'desc',
-            component: () => import("./views/home/desc.vue"),
+            path: '/productDesc',
+            name: 'productDesc',
+            component: () => import("./views/product/productDesc.vue"),
             meta: {
                 title: '产品详情'
             }

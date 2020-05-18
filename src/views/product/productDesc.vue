@@ -11,6 +11,7 @@
         <div class="img-wrap">
             <img :src="item.pPicUrl" alt="" v-for="item in descImg" :key="item.pOrder">
         </div>
+        <div class="btn">购 买</div>
     </div>
 </template>
 
@@ -59,6 +60,7 @@ export default {
 <style lang="less" scoped>
 @s: 0.0133rem;
 .desc{
+    padding-bottom: 100*@s;
     .prod{
         text-align: center;
         background: #fff;
@@ -70,6 +72,17 @@ export default {
         font-weight: bold;
         text-align: center;
         background: #F3F3F3;
+    }
+    .btn{
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #9ABEF7;
+        line-height: 100*@s;
+        text-align: center;
+        color: #fff;
+        font-size: 32*@s;
     }
 }
 </style>

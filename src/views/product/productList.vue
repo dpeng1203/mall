@@ -49,7 +49,7 @@ export default {
             })
         },
         toDesc(item) {
-            this.$router.push({path: '/desc',query:{pCode: item.pCode,pName: item.pName,pPrice2: item.pPrice2}})
+            this.$router.push({path: '/productDesc',query:{pCode: item.pCode,pName: item.pName,pPrice2: item.pPrice2}})
         }
     },
     mounted() {

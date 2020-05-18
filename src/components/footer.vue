@@ -12,7 +12,7 @@
             >
             <van-tabbar-item
                 replace
-                to="/"
+                to="/productList"
                 icon="wap-home-o"
             >
                 首页
@@ -33,7 +33,7 @@
             </van-tabbar-item>
             <van-tabbar-item
                 replace
-                to="/mine"
+                to="/mallMine"
                 icon="manager-o"
             >
                 我的
